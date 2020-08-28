@@ -29,9 +29,8 @@ func set_invencible(value):
 func _on_Timer_timeout():
 	self.invencible = false	
 
-func _on_Hurtbox_invencibility_started():
+func _on_Hurtbox_invencibility_started(): 
 	set_deferred("monitorable", false)
 
 func _on_Hurtbox_invencibility_ended():
-	print("stop monitoring")
-	monitorable = true
+	set_deferred("monitorable", true)
